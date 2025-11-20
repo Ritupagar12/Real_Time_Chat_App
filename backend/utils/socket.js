@@ -17,7 +17,7 @@ export function initSocket(server) {
     // Create a new socket.io server and allow CORS from your frontend origin.
     io = new Server(server, {
         cors: {
-            origin: [process.env.FRONTEND_URL], // only allow your frontend origin(s)
+            origin: "https://real-time-chat-app-1-5ked.onrender.com", // only allow your frontend origin(s)
         },
     });
 

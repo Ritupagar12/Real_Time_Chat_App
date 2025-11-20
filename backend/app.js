@@ -36,7 +36,7 @@ config({ path: "./config/config.env" });
 // Configuring CORS middleware
 // This ensures your frontend can communicate with your backend without browser blocking requests
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // Only allow requests from this specific frontend URL (for security)
+    origin: "https://real-time-chat-app-1-5ked.onrender.com", // Only allow requests from this specific frontend URL (for security)
     credentials: true,  // Allow cookies, tokens, and other credentials to be sent in requests
     methods: ["GET", "POST", "PUT", "DELETE"],  // Define which HTTP methods are allowed from the frontend
     allowedHeaders: ["Content-Type", "Authorization"]
