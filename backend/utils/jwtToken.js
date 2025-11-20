@@ -13,8 +13,8 @@ export const generateJwtToken = async (User, message, statusCode, res) => {
         .cookie("token", token, {
             maxAge: process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000,    // cookie expiry time in ms
             httpOnly: true, // prevents JavaScript access (security)
-            secure: process.env.NODE_ENV === "production", // must be true in prod
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",// cross site for prod
+            sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",// cross site for prod
+            secure: process.env.NODE_ENV === "development" ? false : true, // must be true in prod
         })
         .json({
             success: true,
