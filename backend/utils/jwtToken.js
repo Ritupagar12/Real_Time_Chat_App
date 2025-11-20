@@ -11,10 +11,10 @@ export const generateJwtToken = async (User, message, statusCode, res) => {
     return res
         .status(statusCode)
         .cookie("token", token, {
-            maxAge: process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000,    // cookie expiry time in ms
             httpOnly: true, // prevents JavaScript access (security)
-            sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",// cross site for prod
-            secure: process.env.NODE_ENV === "development" ? false : true, // must be true in prod
+            secure: true, // must be true in prod
+            sameSite: "none",// cross site for prod
+            maxAge: process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000,    // cookie expiry time in ms
         })
         .json({
             success: true,
