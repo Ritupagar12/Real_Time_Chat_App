@@ -14,7 +14,6 @@ export const generateJwtToken = async (User, message, statusCode, res) => {
             httpOnly: true, // prevents JavaScript access (security)
             secure: true, // must be true in prod
             sameSite: "none",// cross site for prod
-            domain: ".onrender.com",
             path: "/",
             maxAge: process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000,    // cookie expiry time in ms
         })
